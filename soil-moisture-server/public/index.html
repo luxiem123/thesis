@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil Moisture Monitoring</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Soil Moisture Monitoring</h1>
+      <nav>
+        <ul>
+          <li><a href="#" id="home-link">Home</a></li>
+          <li><a href="#" id="monitor-link">Monitor</a></li>
+          <li><a href="#" id="settings-link">Settings</a></li>
+          <li><a href="#" id="weekly-report-link">Weekly Report</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="content" class="content">
+      <!-- Home Page -->
+      <div id="home" class="page">
+        <h2>Home</h2>
+        <div class="card">
+          <h2>Average Moisture: <span id="average-moisture">Loading...</span></h2>
+          <h3 id="relay-status">Loading...</h3>
+        </div>
+        <div class="card">
+          <h3>Today's Temperature and Weather</h3>
+          <p id="weather">Loading...</p>
+        </div>
+        <div class="card">
+          <h3>Today's Water Usage</h3>
+          <p id="water-usage">Loading...</p>
+        </div>
+      </div>
+
+      <!-- Monitor Page -->
+      <div id="monitor" class="page" style="display: none;">
+        <h2>Monitor</h2>
+        <div id="sensor-status">
+          <!-- Sensor data will be dynamically inserted here -->
+        </div>
+        <div id="sensor-errors">
+          <!-- Sensor errors will be displayed here -->
+      </div>
+        <div id="today-log-container">
+          <h2>Today's Log</h2>
+          <ul id="today-log"></ul>
+        </div>
+      </div>
+
+      <!-- Settings Page -->
+      <div id="settings" class="page">
+        <div id="phase-reminder" class="reminder">
+          <p>Current Phase: <span id="current-phase">N/A</span></p>
+          <p>Next Phase Change In: <span id="next-phase-change">N/A</span> days</p>
+        </div>
+        <h2>Select Growth Phase</h2>
+        <form id="phase-form">
+          <label for="phase">Choose a phase:</label>
+          <select id="phase" name="phase">
+            <option value="vegetative">Vegetative Phase</option>
+            <option value="bulbing">Bulbing Phase</option>
+            <option value="flowering">Flowering Phase</option>
+          </select>
+  
+          <!-- Phase Descriptions -->
+          <div id="phase-description" class="phase-description">
+            <h3>Phase Description</h3>
+            <p id="description-text">Select a phase to see its description.</p>
+            <p><strong>Duration:</strong> <span id="phase-duration">N/A</span> days</p>
+          </div>
+  
+          <button type="button" id="save-phase">Save Phase</button>
+        </form>
+
+        <!-- Phase Change Log Section -->
+        <div id="phase-log-container" class="log-container">
+          <h2>Phase Change Log</h2>
+          <ul id="phase-log">
+            <!-- Logs will be dynamically inserted here -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Weekly Report Page -->
+      <div id="weekly-report" class="page" style="display: none;">
+        <h2>Weekly Report</h2>
+        <div id="report-form">
+          <form id="report-upload-form" method="post" action="/upload-report" enctype="multipart/form-data">
+            <label for="report-title">Title:</label>
+            <input type="text" id="report-title" name="title" required>
+  
+            <label for="report-date">Date:</label>
+            <input type="date" id="report-date" name="reportDate" required>
+  
+            <label for="report-image">Upload Image:</label>
+            <input type="file" id="report-image" name="reportImage">
+  
+            <label for="report-description">Description:</label>
+            <textarea id="report-description" name="description" required></textarea>
+  
+            <button type="submit">Generate Report</button>
+          </form>
+        </div>
+        <div id="weekly-reports">
+          <h3>Previous Weekly Reports</h3>
+          <ul id="reports-list">
+            <!-- Report entries will be dynamically added here -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Edit Report Form (Initially hidden) -->
+      <div id="edit-report-form" class="page" style="display: none;">
+        <h2>Edit Report</h2>
+        <form id="edit-report">
+          <input type="hidden" id="edit-report-id" name="reportId">
+          <label for="edit-report-title">Title:</label>
+          <input type="text" id="edit-report-title" name="title" required>
+  
+          <label for="edit-report-date">Date:</label>
+          <input type="date" id="edit-report-date" name="reportDate" required>
+  
+          <label for="edit-report-image">Upload New Image:</label>
+          <input type="file" id="edit-report-image" name="reportImage">
+  
+          <label for="edit-report-description">Description:</label>
+          <textarea id="edit-report-description" name="description" required></textarea>
+  
+          <button type="submit">Update Report</button>
+          <button type="button" id="delete-report-button">Delete Report</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

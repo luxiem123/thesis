@@ -1,0 +1,361 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* Sensor Status Styles */
+#sensor-status {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sensor-item {
+  background-color: white;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33% - 20px);
+  box-sizing: border-box;
+}
+
+#view-history, #add-sensor, #edit-sensor, #delete-sensor {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#view-history:hover, #add-sensor:hover, #edit-sensor:hover, #delete-sensor:hover {
+  background-color: #0056b3;
+}
+
+/* Today's Log Styles */
+#today-log-container {
+  background-color: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#today-log-container h2 {
+  margin-top: 0;
+}
+
+#today-log {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#today-log li {
+  background-color: #e9ecef;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Settings Styles */
+#settings {
+  padding: 20px;
+}
+
+#stage-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+}
+
+#stage-form label {
+  margin: 10px 0 5px;
+}
+
+#stage-form input, #stage-form select {
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#save-settings {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#save-settings:hover {
+  background-color: #0056b3;
+}
+
+/* Weekly Report Page Styles */
+#weekly-report {
+  padding: 20px;
+}
+
+#report-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+}
+
+#report-form label {
+  margin: 10px 0 5px;
+}
+
+#report-form input, #report-form textarea {
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#report-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+#report-form button:hover {
+  background-color: #0056b3;
+}
+
+#weekly-reports {
+  margin-top: 30px;
+}
+
+#reports-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#reports-list li {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#reports-list img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover; /* Ensures the image covers the specified aspect ratio */
+  aspect-ratio: 16 / 9; /* Maintains 16:9 aspect ratio */
+  max-height: 840px; /* Restricts height to maintain 16:9 ratio */
+}
+
+#reports-list .report-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#reports-list .report-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+#reports-list .report-info p {
+  margin: 5px 0;
+}
+
+/* Edit Report Page Styles */
+#edit-report-form {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#edit-report-form h2 {
+  margin-top: 0;
+}
+
+#edit-report-form label {
+  margin: 10px 0 5px;
+}
+
+#edit-report-form input, #edit-report-form textarea {
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#edit-report-form input[type="file"] {
+  padding: 0;
+}
+
+#edit-report-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#edit-report-form button:hover {
+  background-color: #0056b3;
+}
+
+#delete-report-button {
+  background-color: #dc3545;
+}
+
+#delete-report-button:hover {
+  background-color: #c82333;
+}
+
+/* Reminder Section Styles */
+.reminder {
+  background-color: #e0f7fa;
+  padding: 15px;
+  margin: 20px 0;
+  border-left: 5px solid #00796b;
+  border-radius: 4px;
+}
+
+.reminder p {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #004d40;
+}
+
+/* Phase Description Styles */
+.phase-description {
+  background-color: #fff3e0;
+  padding: 15px;
+  margin-top: 15px;
+  border-left: 5px solid #ff9800;
+  border-radius: 4px;
+}
+
+.phase-description h3 {
+  margin-top: 0;
+  color: #e65100;
+}
+
+.phase-description p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #4e342e;
+}
+
+/* Phase Log Styles */
+.log-container {
+  background-color: #f1f8e9;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 4px;
+  border: 1px solid #c5e1a5;
+}
+
+.log-container h2 {
+  margin-top: 0;
+  color: #558b2f;
+}
+
+#phase-log {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#phase-log li {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #c8e6c9;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #2e7d32;
+}
+
+#error-message {
+  color: red;
+  font-weight: bold;
+}
